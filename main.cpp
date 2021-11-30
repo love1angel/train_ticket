@@ -1,7 +1,11 @@
 #include <iostream>
+#include "include/Customer.h"
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    Customer customer;
+    std::cin >> customer;
+
+    std::cout << customer << std::endl;
     return 0;
 }
