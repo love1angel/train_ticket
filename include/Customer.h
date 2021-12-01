@@ -24,22 +24,52 @@ public:
 
     ~Customer();
 
-    id_type getId();
+    inline id_type getId();
 
     inline void setId(id_type id);
 
-    const name_type getName();
+    inline name_type getName();
 
-    void setName(name_type &name);
+    inline void setName(name_type &name);
 
-    const passwd_type getPasswd();
+    inline passwd_type getPasswd();
 
-    void setPasswd(passwd_type &passwd);
+    inline void setPasswd(passwd_type &passwd);
 
 private:
     id_type m_id = 0;
     name_type m_name;
     passwd_type m_passwd;
 };
+
+inline Customer::id_type Customer::getId()
+{
+    return m_id;
+}
+
+inline void Customer::setId(id_type id)
+{
+    m_id = id;
+}
+
+inline Customer::name_type Customer::getName()
+{
+    return m_name;
+}
+
+inline void Customer::setName(name_type &name)
+{
+    m_name = name;
+}
+
+inline Customer::passwd_type Customer::getPasswd()
+{
+    return m_passwd;
+}
+
+inline void Customer::setPasswd(passwd_type &passwd)
+{
+    m_passwd = passwd;
+}
 
 #endif //TRAIN_TICKET_CUSTOMER_H

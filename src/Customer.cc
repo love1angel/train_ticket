@@ -32,33 +32,3 @@ Customer::Customer(id_type id, name_type name, passwd_type password)
 }
 
 Customer::~Customer() = default;
-
-Customer::id_type Customer::getId()
-{
-    return m_id;
-}
-
- void Customer::setId(id_type id)
-{
-    m_id = id;
-}
-
- const Customer::name_type Customer::getName()
-{
-    return m_name;
-}
-
- void Customer::setName(name_type &name)
-{
-    m_name = name;
-}
-
- const Customer::passwd_type Customer::getPasswd()
-{
-    return m_passwd;
-}
-
- void Customer::setPasswd(passwd_type &passwd)
-{
-    m_passwd = passwd;
-}

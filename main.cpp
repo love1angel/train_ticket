@@ -4,10 +4,8 @@
 
 #include "CustomerDataBaseHelper.h"
 
-std::string db("/home/ts/CLionProjects/CppProject/train_ticket/resources/custom_data");
-
-int main()
+int main(int argc, char *argv[])
 {
-    CustomerDataBaseHelper customerDataBaseHelper(db);
+    CustomerDataBaseHelper customerDataBaseHelper(argv[1]);
     return 0;
 }
