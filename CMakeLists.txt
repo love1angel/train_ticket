@@ -12,4 +12,4 @@ INCLUDE_DIRECTORIES(./
 
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src SRC)
 
-ADD_EXECUTABLE(${PROJECT_NAME} main.cpp src/Customer.cc)
+ADD_EXECUTABLE(${PROJECT_NAME} main.cpp src/Customer.cc src/CustomerDataBaseHelper.cc)

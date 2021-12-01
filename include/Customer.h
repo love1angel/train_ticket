@@ -14,17 +14,32 @@ class Customer {
     friend std::ostream &operator<<(std::ostream &, const Customer &);
 
 public:
+    using id_type = unsigned int;
+    using name_type = std::string;
+    using passwd_type = std::string;
+
     Customer();
+
+    Customer(id_type id, name_type name, passwd_type password);
 
     ~Customer();
 
-    Customer(unsigned id, const std::string &name, const std::string &password);
+    id_type getId();
+
+    inline void setId(id_type id);
+
+    const name_type getName();
+
+    void setName(name_type &name);
+
+    const passwd_type getPasswd();
+
+    void setPasswd(passwd_type &passwd);
 
 private:
-    unsigned m_id;
-    std::string m_name;
-    std::string m_passwd;
+    id_type m_id = 0;
+    name_type m_name;
+    passwd_type m_passwd;
 };
-
 
 #endif //TRAIN_TICKET_CUSTOMER_H

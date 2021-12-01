@@ -1,11 +1,13 @@
 #include <iostream>
-#include "include/Customer.h"
+#include <memory>
+#include <string>
+
+#include "CustomerDataBaseHelper.h"
+
+std::string db("/home/ts/CLionProjects/CppProject/train_ticket/resources/custom_data");
 
 int main()
 {
-    Customer customer;
-    std::cin >> customer;
-
-    std::cout << customer << std::endl;
+    CustomerDataBaseHelper customerDataBaseHelper(db);
     return 0;
 }
