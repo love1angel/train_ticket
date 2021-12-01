@@ -24,17 +24,17 @@ public:
 
     ~Customer();
 
-    inline id_type getId();
+    inline const id_type &getId() const;
 
-    inline void setId(id_type id);
+    inline void setId(const id_type &id);
 
-    inline name_type getName();
+    inline const name_type &getName() const;
 
-    inline void setName(name_type &name);
+    inline void setName(const name_type &name);
 
-    inline passwd_type getPasswd();
+    inline const passwd_type &getPasswd() const;
 
-    inline void setPasswd(passwd_type &passwd);
+    inline void setPasswd(const passwd_type &passwd);
 
 private:
     id_type m_id = 0;
@@ -42,32 +42,36 @@ private:
     passwd_type m_passwd;
 };
 
-inline Customer::id_type Customer::getId()
+std::istream &operator>>(std::istream &, Customer &);
+
+std::ostream &operator<<(std::ostream &, const Customer &);
+
+inline const Customer::id_type &Customer::getId() const
 {
     return m_id;
 }
 
-inline void Customer::setId(id_type id)
+inline void Customer::setId(const id_type &id)
 {
     m_id = id;
 }
 
-inline Customer::name_type Customer::getName()
+inline const Customer::name_type &Customer::getName() const
 {
     return m_name;
 }
 
-inline void Customer::setName(name_type &name)
+inline void Customer::setName(const name_type &name)
 {
     m_name = name;
 }
 
-inline Customer::passwd_type Customer::getPasswd()
+inline const Customer::passwd_type &Customer::getPasswd() const
 {
     return m_passwd;
 }
 
-inline void Customer::setPasswd(passwd_type &passwd)
+inline void Customer::setPasswd(const passwd_type &passwd)
 {
     m_passwd = passwd;
 }

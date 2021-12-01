@@ -6,6 +6,17 @@
 
 #include <utility>
 
+Customer::Customer() = default;
+
+Customer::Customer(id_type id, name_type name, passwd_type password)
+        : m_id(id),
+          m_name(std::move(name)),
+          m_passwd(std::move(password))
+{
+}
+
+Customer::~Customer() = default;
+
 std::istream &operator>>(std::istream &in, Customer &customer)
 {
     in >> customer.m_id >> customer.m_name >> customer.m_passwd;
@@ -21,14 +32,3 @@ std::ostream &operator<<(std::ostream &out, const Customer &customer)
         << ", password: " << customer.m_passwd;
     return out;
 }
-
-Customer::Customer() = default;
-
-Customer::Customer(id_type id, name_type name, passwd_type password)
-        : m_id(id),
-          m_name(std::move(name)),
-          m_passwd(std::move(password))
-{
-}
-
-Customer::~Customer() = default;
